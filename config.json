@@ -1,0 +1,138 @@
+{
+  "Curah Hujan": {
+    "Ringan": {
+      "value": 2,
+      "percentile": 10,
+      "label": "Hujan Ringan / Berawan Normal (Info BMKG: Hijau)"
+    },
+    "Sedang": {
+      "value": 5,
+      "percentile": 50,
+      "label": "Hujan Lebat Berdurasi > 3 Jam (Info BMKG: Waspada)"
+    },
+    "Tinggi": {
+      "value": 8,
+      "percentile": 90,
+      "label": "Hujan Ekstrem & Angin Kencang (Info BMKG: Siaga/Awas)"
+    }
+  },
+  "Topografi": {
+    "Ringan": {
+      "value": 2,
+      "percentile": 10,
+      "label": "Dataran Tinggi / Lereng Perbukitan Aman"
+    },
+    "Sedang": {
+      "value": 5,
+      "percentile": 50,
+      "label": "Dataran Rendah / Kawasan Pesisir Pantai"
+    },
+    "Tinggi": {
+      "value": 8,
+      "percentile": 90,
+      "label": "Kawasan Cekungan Rendah / Lembah Diapit Bukit"
+    }
+  },
+  "Luapan Sungai": {
+    "Ringan": {
+      "value": 2,
+      "percentile": 10,
+      "label": "Aman (Debit air normal di dalam batas tanggul)"
+    },
+    "Sedang": {
+      "value": 5,
+      "percentile": 50,
+      "label": "Waspada (Air naik / mulai meluap ke jalanan)"
+    },
+    "Tinggi": {
+      "value": 8,
+      "percentile": 90,
+      "label": "Banjir / Galodo (Arus deras, air merendam area luas)"
+    }
+  },
+  "Bendungan": {
+    "Ringan": {
+      "value": 2,
+      "percentile": 10,
+      "label": "Kokoh (Tidak ada kebocoran atau retakan struktural)"
+    },
+    "Sedang": {
+      "value": 5,
+      "percentile": 50,
+      "label": "Kritis (Rembesan air parah atau retak besar pada tanggul)"
+    },
+    "Tinggi": {
+      "value": 8,
+      "percentile": 90,
+      "label": "Jebol (Struktur tanggul patah/runtuh dihantam air)"
+    }
+  },
+  "Drainase": {
+    "Ringan": {
+      "value": 2,
+      "percentile": 10,
+      "label": "Lancar (Air mengalir baik tanpa ada sumbatan)"
+    },
+    "Sedang": {
+      "value": 5,
+      "percentile": 50,
+      "label": "Tersumbat Sedang (Banyak sampah/sedimen, air meluap tipis)"
+    },
+    "Tinggi": {
+      "value": 8,
+      "percentile": 90,
+      "label": "Mampet Total (Drainase rusak/tertutup, air menggenang)"
+    }
+  },
+  "Tanah Longsor": {
+    "Ringan": {
+      "value": 2,
+      "percentile": 10,
+      "label": "Aman (Kawasan datar, tidak ada tebing)"
+    },
+    "Sedang": {
+      "value": 5,
+      "percentile": 50,
+      "label": "Ada Retakan (Lereng bukit mulai retak/ada guguran batu)"
+    },
+    "Tinggi": {
+      "value": 8,
+      "percentile": 90,
+      "label": "Longsor Masif (Tebing runtuh menimbun jalan utama)"
+    }
+  },
+  "Fasilitas Umum": {
+    "Ringan": {
+      "value": 2,
+      "percentile": 10,
+      "label": "Lancar (Jalan aman, semua truk logistik bisa masuk)"
+    },
+    "Sedang": {
+      "value": 5,
+      "percentile": 50,
+      "label": "Terhambat (Hanya bisa dilewati motor atau mobil 4x4)"
+    },
+    "Tinggi": {
+      "value": 8,
+      "percentile": 90,
+      "label": "Terisolasi Total (Jembatan utama ambruk / jalan putus)"
+    }
+  },
+  "Kepadatan Penduduk": {
+    "Ringan": {
+      "value": 2,
+      "percentile": 10,
+      "label": "Populasi Rendah / Sedikit (Kurang dari 100 Jiwa)"
+    },
+    "Sedang": {
+      "value": 5,
+      "percentile": 50,
+      "label": "Populasi Sedang (Antara 100 hingga 500 Jiwa terdampak)"
+    },
+    "Tinggi": {
+      "value": 8,
+      "percentile": 90,
+      "label": "Populasi Sangat Padat / Ramai (Lebih dari 500 Jiwa)"
+    }
+  }
+}
