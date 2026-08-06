@@ -30,7 +30,7 @@ W2_DENSITY = 0.4   # bobot sumbu kepadatan/kerentanan (Dnew vs Dk) -- sesuai nas
 # ---------------------------------------------------------------------------
 @st.cache_resource
 def load_model():
-    return joblib.load("C:/Users/FX506HC/Penelitian/CBR_Streamlit/flood_model.pkl")
+    return joblib.load("flood_model.pkl")
  
  
 @st.cache_data
