@@ -518,7 +518,7 @@ def retrieve_case(r_pred: float, d_new_raw: float,
         else:
             raise KeyError(f"Kolom 'population_density' tidak ditemukan. Kolom yang ada: {list(cb.columns)}")
     cb["distance"]  = weighted_distance(
-        r_pred, d_new_norm, cb["population_density"], cb["density_norm"]
+        r_pred, d_new_norm, cb["risk_score"], cb["density_norm"]
     )
  
     d_max = cb["distance"].max()
