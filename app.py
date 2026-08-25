@@ -509,7 +509,7 @@ def retrieve_case(r_pred: float, d_new_raw: float,
     """
     cb              = CASE_BASE.copy()
     d_new_norm      = normalize_density(d_new_raw)
-    cb["density_norm"] = cb["population_density"].apply(normalize_density)
+    cb["density_norm"] = cb["risk_score"].apply(normalize_density)
     cb["distance"]  = weighted_distance(
         r_pred, d_new_norm, cb["risk_score"], cb["density_norm"]
     )
