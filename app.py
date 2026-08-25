@@ -14,6 +14,97 @@ st.set_page_config(
 )
  
 # =============================================================================
+# INJEKSI CSS — LANGUAGE TOGGLE & HEADER STYLING
+# Ditarget ke elemen header paling atas (first stHorizontalBlock).
+# Tidak memengaruhi tombol lain (Submit, dsb.) di bawahnya.
+# =============================================================================
+st.markdown("""
+<style>
+/* ── 1. Wrapper header row: align items to center vertically ─────────────── */
+[data-testid="stHorizontalBlock"]:first-of-type {
+    align-items: center !important;
+}
+ 
+/* ── 2. Hapus padding berlebih di kolom tombol kanan ────────────────────── */
+[data-testid="stHorizontalBlock"]:first-of-type
+    > [data-testid="column"]:last-child {
+    padding-top: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+}
+ 
+/* ── 3. Container sub-kolom tombol ID/EN ────────────────────────────────── */
+[data-testid="stHorizontalBlock"]:first-of-type
+    > [data-testid="column"]:last-child
+    [data-testid="stHorizontalBlock"] {
+    background: rgba(255,255,255,0.06) !important;
+    border: 1px solid rgba(255,255,255,0.14) !important;
+    border-radius: 999px !important;
+    padding: 3px 4px !important;
+    gap: 2px !important;
+    width: fit-content !important;
+    flex-wrap: nowrap !important;
+}
+ 
+/* ── 4. Semua tombol di dalam pill toggle ───────────────────────────────── */
+[data-testid="stHorizontalBlock"]:first-of-type
+    > [data-testid="column"]:last-child
+    [data-testid="stHorizontalBlock"]
+    .stButton > button {
+    border-radius: 999px !important;
+    border: none !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.4px !important;
+    padding: 5px 14px !important;
+    min-width: 58px !important;
+    transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease !important;
+    white-space: nowrap !important;
+    line-height: 1.4 !important;
+}
+ 
+/* ── 5. Tombol AKTIF (primary) — pill bercahaya ─────────────────────────── */
+[data-testid="stHorizontalBlock"]:first-of-type
+    > [data-testid="column"]:last-child
+    [data-testid="stHorizontalBlock"]
+    .stButton > button[kind="primary"] {
+    background: linear-gradient(135deg, #1c6ef7 0%, #0ea5e9 100%) !important;
+    color: #ffffff !important;
+    box-shadow: 0 2px 10px rgba(14, 165, 233, 0.45) !important;
+}
+ 
+/* ── 6. Tombol INAKTIF (secondary) — transparan subtle ──────────────────── */
+[data-testid="stHorizontalBlock"]:first-of-type
+    > [data-testid="column"]:last-child
+    [data-testid="stHorizontalBlock"]
+    .stButton > button[kind="secondary"] {
+    background: transparent !important;
+    color: rgba(255,255,255,0.55) !important;
+    box-shadow: none !important;
+}
+ 
+/* ── 7. Hover pada tombol inaktif ───────────────────────────────────────── */
+[data-testid="stHorizontalBlock"]:first-of-type
+    > [data-testid="column"]:last-child
+    [data-testid="stHorizontalBlock"]
+    .stButton > button[kind="secondary"]:hover {
+    background: rgba(255,255,255,0.10) !important;
+    color: rgba(255,255,255,0.85) !important;
+}
+ 
+/* ── 8. Hapus border focus bawaan Streamlit pada kedua tombol ───────────── */
+[data-testid="stHorizontalBlock"]:first-of-type
+    > [data-testid="column"]:last-child
+    [data-testid="stHorizontalBlock"]
+    .stButton > button:focus:not(:active) {
+    box-shadow: 0 0 0 2px rgba(14,165,233,0.5) !important;
+    outline: none !important;
+}
+</style>
+""", unsafe_allow_html=True)
+ 
+# =============================================================================
 # KONSTANTA & KOLOM FITUR  (tidak berubah dari versi asli)
 # =============================================================================
 FEATURE_COLS = [
@@ -47,12 +138,13 @@ T = {
     # ── BAHASA INDONESIA ─────────────────────────────────────────────────────
     "id": {
         # Judul & caption
-        "app_title": "Kaji Cepat Bantuan Pasca-Bencana Banjir",
-        "app_caption":("Badan Penanggulangan Bencana Daerah (BPBD) Provinsi Sumatera Barat "
+        "app_title":        "🌊 Kaji Cepat Bantuan Pasca-Bencana Banjir",
+        "app_caption":      (
+            "Badan Penanggulangan Bencana Daerah (BPBD) Provinsi Sumatera Barat "
             "— Prototipe Sistem Hybrid CBR–Ridge Regression"
         ),
         "app_info":         (
-            "**Petunjuk pengisian:** pilih opsi yang paling sesuai dengan laporan "
+            "✨ **Petunjuk pengisian:** pilih opsi yang paling sesuai dengan laporan "
             "visual atau data riil di lokasi kejadian. Setiap parameter memiliki "
             "3 tingkatan: **Ringan, Sedang, Tinggi**."
         ),
@@ -162,19 +254,18 @@ T = {
             "proporsional terhadap kasus historis terparah (Kapalo Koto, {max_d} jiwa) "
             "— BUKAN data registry riil. Perlakukan dengan hati-hati."
         ),
-        # Tombol bahasa
-        "lang_btn_label":   "Switch to English 🇬🇧",
     },
  
     # ── ENGLISH ──────────────────────────────────────────────────────────────
     "en": {
         # Title & caption
-        "app_title": "Post-Flood Aid Rapid Assessment",
-        "app_caption":("Regional Disaster Management Agency (BPBD) West Sumatra Province "
+        "app_title":        "🌊 Post-Flood Aid Rapid Assessment",
+        "app_caption":      (
+            "Regional Disaster Management Agency (BPBD) West Sumatra Province "
             "— Hybrid CBR–Ridge Regression System Prototype"
         ),
         "app_info":         (
-            "**Instructions:** select the option that best matches the visual "
+            "✨ **Instructions:** select the option that best matches the visual "
             "field report or real data at the incident location. Each parameter "
             "has 3 severity tiers: **Low, Moderate, High**."
         ),
@@ -285,8 +376,6 @@ T = {
             "case (Kapalo Koto, {max_d} persons) — NOT real registry data. "
             "Treat with caution."
         ),
-        # Language toggle button
-        "lang_btn_label":   "Ganti ke Bahasa Indonesia 🇮🇩",
     },
 }
  
@@ -343,25 +432,25 @@ TIER_LABELS_EN = {
 # =============================================================================
 @st.cache_resource
 def load_model():
-    return joblib.load("flood_model.pkl")
+    return joblib.load("C:/Users/FX506HC/Penelitian/CBR_Streamlit/flood_model.pkl")
  
  
 @st.cache_data
 def load_config():
-    with open("config.json", encoding="utf-8") as f:
+    with open("C:/Users/FX506HC/Penelitian/CBR_Streamlit/config.json", encoding="utf-8") as f:
         return json.load(f)
  
  
 @st.cache_data
 def load_vuln_lookup():
-    df = pd.read_excel("vulnerability_lookup.xlsx")
+    df = pd.read_excel("C:/Users/FX506HC/Penelitian/CBR_Streamlit/vulnerability_lookup.xlsx")
     df["kelurahan"] = df["kelurahan"].str.strip().str.upper()
     return df
  
  
 @st.cache_data
 def load_case_base():
-    return pd.read_excel("case_base.xlsx")
+    return pd.read_excel("C:/Users/FX506HC/Penelitian/CBR_Streamlit/case_base.xlsx")
  
  
 MODEL       = load_model()
@@ -464,29 +553,47 @@ def severity_label(flood_prob_pct: float, lang: str = "id") -> str:
 # =============================================================================
  
 # ---------------------------------------------------------------------------
-# TOMBOL TOGGLE BAHASA — pojok kanan atas (di luar form agar selalu terlihat)
+# TOMBOL TOGGLE BAHASA — dual-pill 🇮🇩 ID | 🇬🇧 EN di pojok kanan atas
 # ---------------------------------------------------------------------------
-def toggle_language():
-    """Callback: ganti bahasa aktif."""
-    st.session_state["lang"] = "en" if st.session_state["lang"] == "id" else "id"
+def set_lang_id():
+    """Callback: paksa bahasa Indonesia."""
+    st.session_state["lang"] = "id"
+ 
+def set_lang_en():
+    """Callback: paksa bahasa English."""
+    st.session_state["lang"] = "en"
  
  
-lang = st.session_state["lang"]   # shortcut baca
+lang = st.session_state["lang"]   # shortcut baca sesi saat ini
  
-# Baris header: judul kiri, tombol bahasa kanan
+# ── Header: judul (kiri lebar) | pill toggle (kanan sempit) ──────────────
 hdr_col, btn_col = st.columns([5, 1])
+ 
 with hdr_col:
     st.title(t("app_title"))
     st.caption(t("app_caption"))
+ 
 with btn_col:
-    st.write("")   # spacing vertikal agar tombol sejajar judul
-    st.write("")
-    st.button(
-        t("lang_btn_label"),
-        key        = "btn_lang_toggle",
-        on_click   = toggle_language,
-        use_container_width = True,
-    )
+    # Dua tombol dalam sub-baris → dilapisi CSS jadi satu pill tunggal
+    pill_id, pill_en = st.columns(2, gap="small")
+ 
+    with pill_id:
+        # Tombol aktif = primary (biru glowing), inaktif = secondary (transparan)
+        st.button(
+            "🇮🇩 ID",
+            key      = "btn_lang_id",
+            on_click = set_lang_id,
+            type     = "primary"    if lang == "id" else "secondary",
+            use_container_width = True,
+        )
+    with pill_en:
+        st.button(
+            "🇬🇧 EN",
+            key      = "btn_lang_en",
+            on_click = set_lang_en,
+            type     = "primary"    if lang == "en" else "secondary",
+            use_container_width = True,
+        )
  
 st.info(t("app_info"), icon="ℹ️")
  
