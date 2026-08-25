@@ -483,7 +483,7 @@ def get_population_density(kelurahan_input: str, fallback_tier_value: float,
     match = VULN_LOOKUP[VULN_LOOKUP["kelurahan"] == key]
  
     if len(match) > 0:
-        raw = float(match.iloc[0]["jumlah_kelompok_rentan"])
+        raw = float(match.iloc[0]["population_density"])
         return {"raw": raw, "source": "database_bpbd", "warning": None}
  
     # Fallback: skala proporsional terhadap kasus terparah
