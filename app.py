@@ -138,13 +138,13 @@ T = {
     # ── BAHASA INDONESIA ─────────────────────────────────────────────────────
     "id": {
         # Judul & caption
-        "app_title":        "🌊 Kaji Cepat Bantuan Pasca-Bencana Banjir",
-        "app_caption":      (
+        "app_title": "Kaji Cepat Bantuan Pasca-Bencana Banjir",
+        "app_caption": (
             "Badan Penanggulangan Bencana Daerah (BPBD) Provinsi Sumatera Barat "
             "— Prototipe Sistem Hybrid CBR–Ridge Regression"
         ),
         "app_info":         (
-            "✨ **Petunjuk pengisian:** pilih opsi yang paling sesuai dengan laporan "
+            "**Petunjuk pengisian:** pilih opsi yang paling sesuai dengan laporan "
             "visual atau data riil di lokasi kejadian. Setiap parameter memiliki "
             "3 tingkatan: **Ringan, Sedang, Tinggi**."
         ),
@@ -259,13 +259,13 @@ T = {
     # ── ENGLISH ──────────────────────────────────────────────────────────────
     "en": {
         # Title & caption
-        "app_title":        "🌊 Post-Flood Aid Rapid Assessment",
-        "app_caption":      (
+        "app_title": "Post-Flood Aid Rapid Assessment",
+        "app_caption": (
             "Regional Disaster Management Agency (BPBD) West Sumatra Province "
             "— Hybrid CBR–Ridge Regression System Prototype"
         ),
         "app_info":         (
-            "✨ **Instructions:** select the option that best matches the visual "
+            "**Instructions:** select the option that best matches the visual "
             "field report or real data at the incident location. Each parameter "
             "has 3 severity tiers: **Low, Moderate, High**."
         ),
