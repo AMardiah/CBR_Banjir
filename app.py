@@ -509,7 +509,15 @@ def retrieve_case(r_pred: float, d_new_raw: float,
     """
     cb              = CASE_BASE.copy()
     d_new_norm      = normalize_density(d_new_raw)
-    cb["density_norm"] = cb["population_density"].apply(normalize_density)
+    if "population_density" in cb.columns:
+      cb["density_norm"] = cb["population_density"].apply(normalize_density)
+    else:
+    # Cari nama kolom yang mirip jika ada perbedaan penamaan
+     possible_cols = [c for c in cb.columns if 'density' in c.lower() or 'kepadatan' in c.lower()]
+     if possible_cols:
+        cb["density_norm"] = cb[possible_cols[0]].apply(normalize_density)
+     else:
+        raise KeyError(f"Kolom 'population_density' tidak ditemukan. Kolom yang ada: {list(cb.columns)}")
     cb["distance"]  = weighted_distance(
         r_pred, d_new_norm, cb["population_density"], cb["density_norm"]
     )
