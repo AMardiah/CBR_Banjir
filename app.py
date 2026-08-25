@@ -507,7 +507,7 @@ def retrieve_case(r_pred: float, d_new_raw: float,
     CBR Retrieve (Eq.3 & Eq.4).
     Kembalikan kasus terdekat + pesan status dalam bahasa yang dipilih.
     """
-    cb              = VULN_LOOKUP.copy()
+    cb              = CASE_BASE.copy()
     d_new_norm      = normalize_density(d_new_raw)
     cb["density_norm"] = cb["population_density"].apply(normalize_density)
     cb["distance"]  = weighted_distance(
