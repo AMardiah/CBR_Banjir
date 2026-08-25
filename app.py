@@ -458,8 +458,8 @@ TIER_CONFIG = load_config()
 VULN_LOOKUP = load_vuln_lookup()
 CASE_BASE   = load_case_base()
  
-MIN_DENSITY = float(VULN_LOOKUP["jumlah_kelompok_rentan"].min())
-MAX_DENSITY = float(VULN_LOOKUP["jumlah_kelompok_rentan"].max())
+MIN_DENSITY = float(VULN_LOOKUP["population_density"].min())
+MAX_DENSITY = float(VULN_LOOKUP["population_density"].max())
  
  
 # =============================================================================
