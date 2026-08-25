@@ -567,7 +567,7 @@ def set_lang_en():
 lang = st.session_state["lang"]   # shortcut baca sesi saat ini
  
 # ── Header: judul (kiri lebar) | pill toggle (kanan sempit) ──────────────
-hdr_col, btn_col = st.columns([5, 1])
+hdr_col, btn_col = st.columns([5, 2])
  
 with hdr_col:
     st.title(t("app_title"))
