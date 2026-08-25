@@ -343,25 +343,25 @@ TIER_LABELS_EN = {
 # =============================================================================
 @st.cache_resource
 def load_model():
-    return joblib.load("C:/Users/FX506HC/Penelitian/CBR_Streamlit/flood_model.pkl")
+    return joblib.load("flood_model.pkl")
  
  
 @st.cache_data
 def load_config():
-    with open("C:/Users/FX506HC/Penelitian/CBR_Streamlit/config.json", encoding="utf-8") as f:
+    with open("config.json", encoding="utf-8") as f:
         return json.load(f)
  
  
 @st.cache_data
 def load_vuln_lookup():
-    df = pd.read_excel("C:/Users/FX506HC/Penelitian/CBR_Streamlit/vulnerability_lookup.xlsx")
+    df = pd.read_excel("vulnerability_lookup.xlsx")
     df["kelurahan"] = df["kelurahan"].str.strip().str.upper()
     return df
  
  
 @st.cache_data
 def load_case_base():
-    return pd.read_excel("C:/Users/FX506HC/Penelitian/CBR_Streamlit/case_base.xlsx")
+    return pd.read_excel("case_base.xlsx")
  
  
 MODEL       = load_model()
